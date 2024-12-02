@@ -1,3 +1,6 @@
+import time
+start_time = time.time()
+
 def get_lists(inp_file) -> (list, list):
     with open(inp_file) as file:
         list_1, list_2 = zip(*(map(int, line.split("   ")) for line in file))
@@ -33,3 +36,4 @@ def part_2(inp_file) -> int:
 
 print(f"The answer to part 1 is {part_1('day_1_input.txt')}")
 print(f"The answer to part 2 is {part_2('day_1_input.txt')}")
+print(f"Time taken is {round(time.time() - start_time,9)}s")
